@@ -1,0 +1,195 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+<h3>@ViewBag.Message</h3>
+
+<div>
+
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a data-toggle="tab" href="#home">Home</a></li>
+        <li role="presentation"><a data-toggle="tab" href="#lightsdoors">Lights/Doors <span class="badge">1</span></a></li>
+        <li role="presentation"><a data-toggle="tab" href="#cameras">Cameras <span class="badge">1</span></a></li>
+        <li role="presentation"><a data-toggle="tab" href="#telepresencebot">Telepresence Bot <span class="badge">1</span></a></li>
+        <li role="presentation"><a data-toggle="tab" href="#motiondetections">Motion Detections <span class="badge">4</span></a></li>
+        <li role="presentation"><a data-toggle="tab" href="#powerstatus">Power Status</a></li>
+        <li role="presentation"><a data-toggle="tab" href="#cortanadialog">Cortana Dialog</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade active">
+            <h3>Home</h3>
+            <img src="~/Images/337623.jpg" class="img-responsive" alt="an image" />
+        </div>
+        <div id="cameras" class="tab-pane fade in">
+            <h3>Cameras</h3>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="~/Images/337623.jpg" alt="prop1" />
+                        <div class="caption">
+                            <h3>Camera 1</h3>
+                            <p><a href="#" class="btn btn-primary" role="button">Pan Left</a> <a href="#" class="btn btn-default" role="button">Pan Right</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="~/Images/Castle_Neuschwanstein.jpg" alt="prop1" />
+                        <div class="caption">
+                            <h3>Camera 2</h3>
+                            <p><a href="#" class="btn btn-primary" role="button">Pan Left</a> <a href="#" class="btn btn-default" role="button">Pan Right</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="~/Images/fyvie-castle.jpg" alt="prop1" />
+                        <div class="caption">
+                            <h3>Camera 3</h3>
+                            <p><a href="#" class="btn btn-primary" role="button">Pan Left</a> <a href="#" class="btn btn-default" role="button">Pan Right</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div id="motiondetections" class="tab-pane fade">
+            <h3>Motion Detections</h3>
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Panel heading</div>
+
+                <!-- Table -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Sensor</th>
+                            <th>Date/Time</th>
+                            <th>Duration</th>
+                            <th>View Incident</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Camera 1</td>
+                            <td>8/1/2015 1:00:00</td>
+                            <td>10 sec</td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Camera 1</td>
+                            <td>8/1/2015 1:00:00</td>
+                            <td>3 sec</td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Camera 1</td>
+                            <td>8/1/2015 1:00:00</td>
+                            <td>10 sec</td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div id="powerstatus" class="tab-pane fade">
+            <h3>Power Status</h3>
+            <div class="progress">
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 40%;">
+                    40%
+                </div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 80%;">
+                    80%
+                </div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 80%;">
+                    80%
+                </div>
+            </div>
+        </div>
+        <div id="telepresencebot" class="tab-pane fade">
+            <h3>Telepresence Bot</h3>
+            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        </div>
+        <div id="lightsdoors" class="tab-pane fade">
+            <h3>Lights/Doors</h3>
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Panel heading</div>
+
+                <!-- Table -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Control</th>
+                            <th>Info</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Front Door</td>
+                            <td>Unlocked</td>
+                            <td></td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Garage Door</td>
+                            <td>Open</td>
+                            <td></td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Lights 1</td>
+                            <td>On</td>
+                            <td></td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Lights 2</td>
+                            <td>Off</td>
+                            <td></td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div id="cortanadialog" class="tab-pane fade">
+            <h3>Cortana Dialog</h3>
+            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        </div>
+
+    </div>
+
+    <br />
+
+    <br /><br />
+
+
+    <br /><br />
+
+</div>
+
