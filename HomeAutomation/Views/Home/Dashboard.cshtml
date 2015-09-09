@@ -1,21 +1,23 @@
-﻿
+﻿@model HomeAutomation.Models.Property
+
 @{
     ViewBag.Title = "Dashboard";
 }
 
 <h2>Dashboard</h2>
-<h3>@ViewBag.Message</h3>
+<h3>@Html.DisplayFor(model => model.PropertyName)</h3>
 
 <div>
 
     <ul class="nav nav-tabs">
         <li role="presentation" class="active"><a data-toggle="tab" href="#home">Home</a></li>
-        <li role="presentation"><a data-toggle="tab" href="#lightsdoors">Lights/Doors <span class="badge">1</span></a></li>
+        <li role="presentation"><a data-toggle="tab" href="#lights">Lights <span class="badge">2</span></a></li>
+        <li role="presentation"><a data-toggle="tab" href="#locks">Locks <span class="badge">2</span></a></li>
         <li role="presentation"><a data-toggle="tab" href="#cameras">Cameras <span class="badge">1</span></a></li>
         <li role="presentation"><a data-toggle="tab" href="#telepresencebot">Telepresence Bot <span class="badge">1</span></a></li>
         <li role="presentation"><a data-toggle="tab" href="#motiondetections">Motion Detections <span class="badge">4</span></a></li>
-        <li role="presentation"><a data-toggle="tab" href="#powerstatus">Power Status</a></li>
-        <li role="presentation"><a data-toggle="tab" href="#cortanadialog">Cortana Dialog</a></li>
+        <li role="presentation"><a data-toggle="tab" href="#powerstatus">Power Status </a></li>
+        <li role="presentation"><a data-toggle="tab" href="#cortanadialog">Cortana Dialog </a></li>
     </ul>
 
     <div class="tab-content">
@@ -126,8 +128,8 @@
             <h3>Telepresence Bot</h3>
             <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
         </div>
-        <div id="lightsdoors" class="tab-pane fade">
-            <h3>Lights/Doors</h3>
+        <div id="lights" class="tab-pane fade">
+            <h3>Lights</h3>
             <div class="panel panel-default">
                 <!-- Default panel contents -->
                 <div class="panel-heading">Panel heading</div>
@@ -144,34 +146,53 @@
                         </tr>
                     </thead>
                     <tbody>
+
+                        @foreach (var item in Model.Light)
+                        {
+                            <tr>
+                                <th scope="row">@Html.DisplayFor(modelItem => item.LightId)</th>
+                                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                <td>On</td>
+                                <td></td>
+                                <td><a href="">View</a></td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div id="locks" class="tab-pane fade">
+            <h3>Locks</h3>
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Panel heading</div>
+
+                <!-- Table -->
+                <table class="table">
+                    <thead>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Front Door</td>
-                            <td>Unlocked</td>
-                            <td></td>
-                            <td><a href="">View</a></td>
+                            <th>#</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Control</th>
+                            <th>Info</th>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Garage Door</td>
-                            <td>Open</td>
-                            <td></td>
-                            <td><a href="">View</a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Lights 1</td>
-                            <td>On</td>
-                            <td></td>
-                            <td><a href="">View</a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Lights 2</td>
-                            <td>Off</td>
-                            <td></td>
-                            <td><a href="">View</a></td>
-                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model.Lock)
+                        {
+                            <tr>
+                                <th scope="row">@Html.DisplayFor(modelItem => item.LockId)</th>
+                                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                <td>Locked</td>
+                                <td></td>
+                                <td><a href="">View</a></td>
+                            </tr>
+                        }
+
                     </tbody>
                 </table>
             </div>

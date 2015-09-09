@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Net;
+using HomeAutomation.Models;
 
 namespace HomeAutomation.Controllers
 {
     public class HomeController : Controller
     {
+        private PropertyScaffolding1Context db = new PropertyScaffolding1Context();
+
         public ActionResult Index()
         {
             return View();
@@ -27,11 +31,24 @@ namespace HomeAutomation.Controllers
             return View();
         }
 
-        public ActionResult Dashboard()
+        // GET: /Home/Dashboard/5
+        //Took below from controller that was created when using scaffolding on Property model, removed the controller that was created with that and all the CRUD view files
+        public ActionResult Dashboard(int? id)
         {
-            ViewBag.Message = "Property 1";
+            //Todo: unhardcoded
+            id = 2;
 
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Property property = db.Properties.Find(id);
+            if (property == null)
+            {
+                return HttpNotFound();
+            }
+            return View(property);
         }
+
     }
 }
